@@ -1,0 +1,2 @@
+### Probar ruta de legiones
+GET http://localhost:3000/legiones/35

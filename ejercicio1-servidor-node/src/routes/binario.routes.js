@@ -3,6 +3,6 @@ import { complemento } from '../controllers/binario.controller.js';
 
 const router = Router();
 
-router.get('/:tipo/:bin', complemento);
+router.get('/:tipo/:binario', complemento);
 
 export default router;
