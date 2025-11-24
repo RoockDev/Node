@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cliente Lingo</title>
+</head>
+<body>
+  <h1>Juego del Lingo </h1>
+
+  <button id="newGameBtn">Crear nueva partida</button>
+  <p>Id de partida actual: <span id="gameId">-</span></p>
+
+  <hr />
+
+  <label for="wordInput">Palabra (5 letras): </label>
+  <input id="wordInput" type="text" maxlength="5" />
+
+  <button id="guessBtn">Enviar intento</button>
+
+  <h2>Respuesta</h2>
+  <pre id="output"></pre>
+
+  <script src="./js/lingo-client.js"></script>
+</body>
+</html>
