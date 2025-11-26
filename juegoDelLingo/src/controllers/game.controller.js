@@ -6,17 +6,22 @@ import { getClues } from "../utils/clues.js";
 const games = [];
 
 // POST /api/games crear nueva partida
-export const createGame = (req, res) => {
-  const id = games.length + 1; //id autoincremental
-  const secret = getRandomWord();
+export const createGame = async (req,res) => {
+  try{
+    const id = games.length + 1; //id autoincremental en memoria
+    const secret = await getRandomWord(); //ahora viene de la bbdd
 
-  const newGame = new Game(id, secret); // se crea la partida
-  games.push(newGame);
+    const newGame = new Game(id,secret); // se crea la partida
+    games.push(newGame);
 
-  res.status(201).json({
-    message: "partida creada correctamente",
-    game: newGame,
-  });
+    res.status(201).json({
+      message: 'partida creada correctamente',
+      game: newGame
+    });
+  }catch(error){
+    console.error('error al crear la partida', error);
+    res.status(500).json({message: 'Error al crear la partida'});
+  }
 };
 
 // POST /api/games/:id/guess hacer intento

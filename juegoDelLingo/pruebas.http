@@ -2,6 +2,16 @@ GET http://localhost:3000/api/games
 
 ### crear partida
 POST http://localhost:3000/api/games
+Content-Type: application/json
+
+### LOGIN LINGO
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "dni": "12345678A",
+  "clave": "1234"
+}
 
 ### hacer intento 
 POST http://localhost:3000/api/games/1/guess
@@ -10,3 +20,5 @@ Content-Type: application/json
 {
   "word": "hueso"
 }
+
+
